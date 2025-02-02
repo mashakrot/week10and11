@@ -37,7 +37,11 @@ const FrontPage: React.FC<FrontPageProps> = ({ saveJoke }) => {
 
   return (
     <div style={{ textAlign: "center", marginTop: 20 }}>
-      {loading ? <CircularProgress /> : joke && (
+      {loading ? (
+        <Typography variant="h6" style={{ marginTop: "20px" }}>
+        Loading a joke...
+        </Typography>
+      ) : joke && (
         <Card variant="outlined" sx={{ maxWidth: 400, margin: "auto", padding: 2 }}>
           <CardContent>
             <Typography variant="h6">{joke.setup}</Typography>
