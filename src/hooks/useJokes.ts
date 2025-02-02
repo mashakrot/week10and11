@@ -1,24 +1,24 @@
 import { useState } from "react";
 
-interface Joke {
+export interface IJoke {
   id: number;
   setup: string;
   punchline: string;
 }
 
 const useJokes = () => {
-  const [savedJokes, setSavedJokes] = useState<Joke[]>([]);
+  const [savedJokes, setSavedJokes] = useState<IJoke[]>([]);
 
-  const saveJoke = (joke: Joke): boolean => {
-    if (!savedJokes.some((savedJoke) => savedJoke.id === joke.id)) {
-      setSavedJokes((prevJokes) => [...prevJokes, joke]);
+  const saveJoke = (joke: IJoke) => {
+    if (!savedJokes.some((j) => j.id === joke.id)) {
+      setSavedJokes([...savedJokes, joke]);
       return true;
     }
     return false;
   };
 
   const deleteJoke = (id: number) => {
-    setSavedJokes((prevJokes) => prevJokes.filter((joke) => joke.id !== id));
+    setSavedJokes(savedJokes.filter((joke) => joke.id !== id));
   };
 
   return { savedJokes, saveJoke, deleteJoke };
