@@ -46,7 +46,7 @@ const FrontPage: React.FC<FrontPageProps> = ({ saveJoke }) => {
         </Card>
       )}
 
-      <Button variant="contained" color="primary" onClick={fetchJoke} sx={{ marginTop: 2 }}>New Joke</Button>
+      <Button variant="contained" color="primary" onClick={fetchJoke} sx={{ marginTop: 2 }}>Get Joke</Button>
       {saveJoke && joke && (
         <Button variant="contained" color="secondary" onClick={() => saveJoke(joke)} sx={{ marginLeft: 2, marginTop: 2 }}>
           Save Joke
