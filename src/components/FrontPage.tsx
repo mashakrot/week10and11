@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Typography, Button, CircularProgress } from "@mui/material";
+import { Card, CardContent, Typography, Button } from "@mui/material";
 
 interface Joke {
   id: number;
